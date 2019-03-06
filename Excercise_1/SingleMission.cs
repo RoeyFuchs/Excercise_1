@@ -11,18 +11,18 @@ namespace Excercise_1
         private const string TypeString = "Single";
         private aFunc calculateFunc;
 
-        SingleMission(aFunc calcFunc, string name)
+        public SingleMission(aFunc calcFunc, string name)
         {
             calculateFunc = calcFunc;
             Name = name;
             Type = TypeString;
         }
 
-        event EventHandler<double> OnCalculate;  // An Event of when a mission is activated
+        public event EventHandler<double> OnCalculate;  // An Event of when a mission is activated
 
-        String Name { get; }
-        String Type { get; }
+        public String Name { get; }
+        public String Type { get; }
 
-        double Calculate(double value) {}
+        public double Calculate(double value) { return calculateFunc(value); }
     }
 }

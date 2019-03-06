@@ -14,18 +14,17 @@ namespace Excercise_1
         public aFunc this[string str]
         {
             get {
-                //check if we have the key and return the value (the function)
-                if(dic.ContainsKey(str)) {
-                    return dic[str];
+                //if we don't have the key in the dictinary, add a defualt function
+                if (!dic.ContainsKey(str)) {
+                    dic[str] = (val => val);
                 }
-                //if we don't have the key in the dictinary, return a deafult function 
-                return (val => val);
+                return dic[str];
             }
             //add a function to the dictionary
             set { dic[str] = value; }
         }
 
-        FunctionsContainer()
+        public FunctionsContainer()
         {
             dic = new Dictionary<string, aFunc>();
         }
@@ -33,7 +32,4 @@ namespace Excercise_1
 
 
     }
-}
-
-
 }
