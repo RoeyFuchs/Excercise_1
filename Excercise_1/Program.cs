@@ -52,7 +52,7 @@ namespace Excercise_1
             ComposedMission mission2 = new ComposedMission("mission2")
                 .Add(funcList["Triple"])
                 .Add(funcList["Plus2"])
-                .Add(funcList["Square"]);
+                .Add(funcList["Sqrt"]);
 
             SingleMission mission3 = new SingleMission(funcList["Double"], "mission3");
 
@@ -66,7 +66,7 @@ namespace Excercise_1
 
            
             double i = mission2.Calculate(5);
-            Console.WriteLine(mission5.Calculate(54));
+            Console.WriteLine(i);
 
             Console.ReadKey();
 

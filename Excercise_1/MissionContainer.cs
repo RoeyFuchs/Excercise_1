@@ -4,19 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Excercise_1
-{
+namespace Excercise_1 {
     public delegate double aFunc(double val);
-    public class FunctionsContainer
-    {
+    public class FunctionsContainer {
+        private aFunc defualtFunction = val => val;
         private Dictionary<string, aFunc> dic;
 
-        public aFunc this[string str]
-        {
+        public aFunc this[string str] {
             get {
                 //if we don't have the key in the dictinary, add a defualt function
                 if (!dic.ContainsKey(str)) {
-                    dic[str] = (val => val);
+                    dic[str] = defualtFunction;
                 }
                 return dic[str];
             }
@@ -24,12 +22,8 @@ namespace Excercise_1
             set { dic[str] = value; }
         }
 
-        public FunctionsContainer()
-        {
+        public FunctionsContainer() {
             dic = new Dictionary<string, aFunc>();
         }
-
-
-
     }
 }

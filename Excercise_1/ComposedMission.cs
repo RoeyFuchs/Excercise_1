@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Excercise_1
-{
-    public class ComposedMission : IMission
-    {
+namespace Excercise_1 {
+    public class ComposedMission : IMission {
         private const string TypeString = "Composed";
         private List<aFunc> list;
         public ComposedMission(string name) {
@@ -20,16 +18,32 @@ namespace Excercise_1
         public String Name { get; }
         public String Type { get; }
 
-        public double Calculate(double value)
-        {
-            foreach(var func in list)
-            {
+        /// <summary>
+        /// The function get a double, calculate by the all calculate functions
+        /// and return the answer
+        /// </summary>
+        /// <param name="value"> 
+        /// number as input (double)
+        /// </param>
+        /// <returns>
+        /// numbner as return value (double)
+        /// </returns>
+        public double Calculate(double value) {
+            foreach (var func in list) {
                 value = func(value);
             }
             return value;
         }
-        public ComposedMission Add(aFunc func)
-        {
+        /// <summary>
+        /// add another function to calculate with
+        /// </summary>
+        /// <param name="func">
+        /// function to add
+        /// </param>
+        /// <returns>
+        /// the Composed mission object (that you can use it again)
+        /// </returns>
+        public ComposedMission Add(aFunc func) {
             list.Add(func);
             return this;
         }
