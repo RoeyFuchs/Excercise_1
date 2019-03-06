@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace Excercise_1 {
     public class ComposedMission : IMission {
         private const string TypeString = "Composed";
-        private List<aFunc> list;
+        private List<customFunc> list;
         public ComposedMission(string name) {
             Name = name;
             Type = TypeString;
-            list = new List<aFunc>();
+            list = new List<customFunc>();
         }
         public event EventHandler<double> OnCalculate;  // An Event of when a mission is activated
 
@@ -43,7 +43,7 @@ namespace Excercise_1 {
         /// <returns>
         /// the Composed mission object (that you can use it again)
         /// </returns>
-        public ComposedMission Add(aFunc func) {
+        public ComposedMission Add(customFunc func) {
             list.Add(func);
             return this;
         }

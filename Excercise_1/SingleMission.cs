@@ -8,8 +8,8 @@ namespace Excercise_1 {
     public class SingleMission : IMission {
 
         private const string TypeString = "Single";
-        private aFunc calculateFunc;
-        public SingleMission(aFunc calcFunc, string name) {
+        private customFunc calculateFunc;
+        public SingleMission(customFunc calcFunc, string name) {
             calculateFunc = calcFunc;
             Name = name;
             Type = TypeString;

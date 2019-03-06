@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Excercise_1 {
-    public delegate double aFunc(double val);
+    public delegate double customFunc(double val);
     public class FunctionsContainer {
-        private aFunc defualtFunction = val => val;
-        private Dictionary<string, aFunc> dic;
+        private customFunc defualtFunction = val => val;
+        private Dictionary<string, customFunc> dic;
 
-        public aFunc this[string str] {
+        public customFunc this[string str] {
             get {
                 //if we don't have the key in the dictinary, add a defualt function
                 if (!dic.ContainsKey(str)) {
@@ -23,7 +23,7 @@ namespace Excercise_1 {
         }
 
         public FunctionsContainer() {
-            dic = new Dictionary<string, aFunc>();
+            dic = new Dictionary<string, customFunc>();
         }
     }
 }
