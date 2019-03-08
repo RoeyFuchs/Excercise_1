@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Excercise_1 {
     public class SingleMission : IMission {
@@ -39,7 +35,7 @@ namespace Excercise_1 {
         /// <returns>numbner as return value (double)</returns>
         public double Calculate(double value) {
             double ans = calculateFunc(value);
-            OnCalculate?.Invoke(this, value);
+            OnCalculate?.Invoke(this, ans);
             return ans;
         }
     }
